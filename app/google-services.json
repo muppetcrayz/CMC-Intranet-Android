@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "69522043928",
+    "firebase_url": "https://mobileapi-13e94.firebaseio.com",
+    "project_id": "mobileapi-13e94",
+    "storage_bucket": "mobileapi-13e94.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:69522043928:android:07183c888655e9c3",
+        "android_client_info": {
+          "package_name": "com.sageconger.CMC_Intranet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "69522043928-69oh4i393gbooprfrvba3rinueoafjkj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBw82q1r2j8k_kgG0gAOyHEfASVie_Oozo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "69522043928-69oh4i393gbooprfrvba3rinueoafjkj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "69522043928-u0p396s00m9q33b46255deuqangkc5fl.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.sageconger.CMC-Intranet"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
