@@ -8,6 +8,8 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.webkit.CookieManager;
+import android.webkit.CookieSyncManager;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -46,14 +48,26 @@ public class FullscreenActivity extends AppCompatActivity {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
                 try {
-                    mWebView.loadUrl(url);
+                    Intent intent = new Intent(getApplicationContext(), TabBarActivity.class);
+                    startActivity(intent);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
                 return true;
             }
-        });
 
+        });
+        CookieSyncManager.createInstance(this);
+        CookieSyncManager.getInstance().startSync();
+        CookieManager cookieManager = CookieManager.getInstance();
+        cookieManager.setAcceptCookie(true);
+        CookieManager.getInstance().setAcceptThirdPartyCookies(mWebView, true);
+
+        if (cookieManager.hasCookies()) {
+            Intent intent = new Intent(getApplicationContext(), TabBarActivity.class);
+            startActivity(intent);
+        }
+        mWebView.getSettings().setAppCacheEnabled(true);
         mWebView.loadUrl("http://intranet.cmcmmi.com");
 
         FirebaseInstanceId.getInstance().getInstanceId()
